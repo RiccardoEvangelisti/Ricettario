@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.ToggleSwitch?>
+
+<AnchorPane fx:id="anchorPaneAR" prefHeight="873.0" prefWidth="1101.0" stylesheets="@cssFiles/bootstrap3.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ScreenAggiungiRicettaController">
+   <children>
+      <TextField fx:id="nomeRicettaAR" layoutX="36.0" layoutY="24.0" prefHeight="68.0" prefWidth="416.0" promptText="Nome Ricetta" styleClass="color-palette">
+         <font>
+            <Font size="19.0" />
+         </font></TextField>
+      <TextArea fx:id="preparazioneAR" layoutX="430.0" layoutY="419.0" prefHeight="419.0" prefWidth="471.0" promptText="Preparazione..." styleClass="color-palette" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font></TextArea>
+      <Button fx:id="inserimentoFinaleAR" layoutX="963.0" layoutY="796.0" mnemonicParsing="false" onAction="#inserimentoFinale" prefHeight="54.0" prefWidth="108.0" styleClass="color-palette" text="INSERISCI" />
+      <Button fx:id="aggiornaRicettaAR" disable="true" layoutX="963.0" layoutY="736.0" mnemonicParsing="false" onAction="#aggiornaRicettaHandler" prefHeight="54.0" prefWidth="108.0" styleClass="color-palette" text="AGGIORNA" visible="false" />
+      <ToggleSwitch fx:id="vegAR" layoutX="151.0" layoutY="280.0" prefHeight="54.0" prefWidth="122.0" style="-fx-background-color: #66cdaa;" styleClass="color-palette" text="   Veg" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </ToggleSwitch>
+      <Spinner fx:id="porzioniAR" layoutX="750.0" layoutY="343.0" prefHeight="54.0" prefWidth="79.0" styleClass="color-palette" />
+      <ImageView fitHeight="79.0" fitWidth="84.0" layoutX="27.0" layoutY="330.0" preserveRatio="true">
+         <image>
+            <Image url="@../images/diet.png" />
+         </image>
+      </ImageView>
+      <ToggleButton fx:id="antipastoButton" contentDisplay="BOTTOM" graphicTextGap="0.0" layoutX="36.0" layoutY="128.0" mnemonicParsing="false" onAction="#antipastoHandler" prefHeight="90.0" prefWidth="90.0" styleClass="color-palette" text="Antipasto">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="54.0" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@../images/starter.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <toggleGroup>
+            <ToggleGroup fx:id="buttonGroup_PORTATE" />
+         </toggleGroup>
+      </ToggleButton>
+      <ToggleButton fx:id="primoButton" contentDisplay="BOTTOM" layoutX="150.0" layoutY="128.0" mnemonicParsing="false" onAction="#primoHandler" prefHeight="86.0" prefWidth="90.0" styleClass="color-palette" text="Primo" toggleGroup="$buttonGroup_PORTATE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="48.0" fitWidth="51.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/spaghetti.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </ToggleButton>
+      <ToggleButton fx:id="secondoButton" contentDisplay="BOTTOM" layoutX="266.0" layoutY="128.0" mnemonicParsing="false" onAction="#secondoHandler" prefWidth="90.0" styleClass="color-palette" text="Secondo" toggleGroup="$buttonGroup_PORTATE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="49.0" fitWidth="53.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/curry.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </ToggleButton>
+      <ToggleButton fx:id="contornoButton" contentDisplay="BOTTOM" layoutX="381.0" layoutY="128.0" mnemonicParsing="false" onAction="#contornoHandler" prefWidth="90.0" styleClass="color-palette" text="Contorno" toggleGroup="$buttonGroup_PORTATE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="49.0" fitWidth="83.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/salad.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </ToggleButton>
+      <ToggleButton fx:id="dolceButton" contentDisplay="BOTTOM" layoutX="497.0" layoutY="128.0" mnemonicParsing="false" onAction="#dolceHandler" prefHeight="50.0" prefWidth="90.0" styleClass="color-palette" text="Dolce" toggleGroup="$buttonGroup_PORTATE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="49.0" fitWidth="90.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/peceOfcake.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </ToggleButton>
+      <ImageView fitHeight="54.0" fitWidth="62.0" layoutX="302.0" layoutY="351.0" preserveRatio="true">
+         <image>
+            <Image url="@../images/gluten.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="85.0" fitWidth="62.0" layoutX="836.0" layoutY="339.0" preserveRatio="true">
+         <image>
+            <Image url="@../images/plates.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="54.0" fitWidth="46.0" layoutX="284.0" layoutY="284.0" preserveRatio="true">
+         <image>
+            <Image url="@../images/leaf.png" />
+         </image>
+      </ImageView>
+      <ScrollPane fx:id="ingredientiScrollPane" layoutX="36.0" layoutY="420.0" prefHeight="419.0" prefWidth="323.0">
+         <content>
+            <VBox fx:id="vBoxScrollPane" prefHeight="417.0" prefWidth="320.0">
+               <children>
+                  <HBox fx:id="hBoxScrollPane" alignment="CENTER" prefHeight="68.0" prefWidth="314.0">
+                     <children>
+                        <TextField fx:id="nomeIngredienteAR" onKeyPressed="#ingredienteAggiungiENTER" prefHeight="43.0" prefWidth="267.0" promptText="Ingrediente" styleClass="color-palette">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="aggiungiIngredienteAR" alignment="CENTER" contentDisplay="CENTER" ellipsisString="+" minWidth="28.0" mnemonicParsing="false" onAction="#ingredienteAggiungi" prefHeight="28.0" prefWidth="28.0" style="-fx-background-radius: 5em;" text="+">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="6.0" left="6.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <ToggleSwitch fx:id="glutineAR" layoutX="125.0" layoutY="351.0" prefHeight="54.0" prefWidth="167.0" style="-fx-background-color: #f0e68c;" styleClass="color-palette" text="  Senza Glutine" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </ToggleSwitch>
+      <ToggleButton fx:id="cinqueMin" contentDisplay="CENTER" layoutX="711.0" layoutY="92.0" minWidth="0.0" mnemonicParsing="false" onAction="#cinqueMinHandler" prefWidth="70.0">
+         <graphic>
+            <ImageView fitWidth="60.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/5-min.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <toggleGroup>
+            <ToggleGroup fx:id="buttonGroup_ORESCELTE" />
+         </toggleGroup>
+      </ToggleButton>
+      <ToggleButton fx:id="quindiciMin" layoutX="791.0" layoutY="92.0" mnemonicParsing="false" onAction="#quindiciMinHandler" prefWidth="70.0" toggleGroup="$buttonGroup_ORESCELTE">
+         <graphic>
+            <ImageView fitWidth="60.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/15-min.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </ToggleButton>
+      <ToggleButton fx:id="trentaMin" layoutX="872.0" layoutY="92.0" mnemonicParsing="false" onAction="#trentaMinHandler" prefWidth="70.0" toggleGroup="$buttonGroup_ORESCELTE">
+         <graphic>
+            <ImageView fitWidth="60.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/30-min.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </ToggleButton>
+      <ToggleButton fx:id="quarantacinqueMin" layoutX="954.0" layoutY="92.0" mnemonicParsing="false" onAction="#quarantacinqueMinHandler" prefWidth="70.0" toggleGroup="$buttonGroup_ORESCELTE">
+         <graphic>
+            <ImageView fitWidth="60.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/45-min.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </ToggleButton>
+      <ToggleButton fx:id="unaOra" layoutX="749.0" layoutY="175.0" mnemonicParsing="false" onAction="#unaOraHandler" prefWidth="70.0" toggleGroup="$buttonGroup_ORESCELTE">
+         <graphic>
+            <ImageView fitWidth="60.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/1-ora.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </ToggleButton>
+      <ToggleButton fx:id="dueOre" layoutX="833.0" layoutY="175.0" mnemonicParsing="false" onAction="#dueOreHandler" prefWidth="70.0" toggleGroup="$buttonGroup_ORESCELTE">
+         <graphic>
+            <ImageView fitWidth="60.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/2-ora.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </ToggleButton>
+      <ToggleSwitch fx:id="cotturaAR" layoutX="432.0" layoutY="343.0" prefHeight="54.0" prefWidth="194.0" style="-fx-background-color: #f08080;" styleClass="color-palette" text="    Richiede Cottura" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </ToggleSwitch>
+      <ImageView fitHeight="62.0" fitWidth="62.0" layoutX="634.0" layoutY="330.0" preserveRatio="true">
+         <image>
+            <Image url="@../images/cooking.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="923.0" layoutY="182.0" text="Personalizza">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Spinner fx:id="oreScelte" layoutX="931.0" layoutY="205.0" onMousePressed="#piuDueOreHandler" prefHeight="30.0" prefWidth="70.0" />
+      <Button fx:id="aggiungiImmPreparazione" contentDisplay="RIGHT" layoutX="940.0" layoutY="533.0" minWidth="19.0" mnemonicParsing="false" onAction="#aggiungiImmaginiPreparazioneHandler" prefHeight="42.0" prefWidth="46.0" textAlignment="CENTER" wrapText="true">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="47.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/up-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="aggiungiImmPiatto" contentDisplay="RIGHT" layoutX="940.0" layoutY="447.0" mnemonicParsing="false" onAction="#aggiungiImmaginePiattoHandler" prefHeight="47.0" prefWidth="46.0" textAlignment="CENTER" wrapText="true">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="47.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/up-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="vediImmPreparazione" layoutX="990.0" layoutY="523.0" mnemonicParsing="false" onAction="#vediImmaginiPreparazioneHandler" style="-fx-background-color: null; -fx-border-color: null;">
+         <graphic>
+            <ImageView fitHeight="57.0" fitWidth="57.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/recipe.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="vediImmPiatto" layoutX="991.0" layoutY="437.0" mnemonicParsing="false" onAction="#vediImmaginePiattoHandler" style="-fx-background-color: null; -fx-border-color: null;">
+         <graphic>
+            <ImageView fitHeight="57.0" fitWidth="55.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/piatto.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
