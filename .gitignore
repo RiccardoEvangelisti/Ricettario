@@ -2,3 +2,4 @@ bin/
 ricettario_DB/
 /derby.log
 /log
+/target/
